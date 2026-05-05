@@ -1,0 +1,58 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn-custom {
+  @include button-style;
+  
+  &.btn-primary {
+    @include button-style($color-primary, $color-white);
+  }
+  
+  &.btn-secondary {
+    @include button-style($color-secondary, $color-dark);
+  }
+  
+  &.btn-outline {
+    background-color: transparent;
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+  
+  &.btn-lg {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-lg;
+  }
+  
+  &.btn-sm {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-sm;
+  }
+}
+
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba($color-white, 0.2);
+    border-radius: $radius-round;
+    transform: translate(-50%, -50%);
+    @include transition(all, 0.5s, ease);
+  }
+  
+  &:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+}

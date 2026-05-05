@@ -1,0 +1,89 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.service-card {
+  background-color: $color-white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  @include card-hover;
+  height: 100%;
+  
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    @include transition(transform, 0.5s, ease);
+  }
+  
+  &:hover .card-img-top {
+    transform: scale(1.05);
+  }
+  
+  .card-body {
+    padding: $spacing-lg;
+    
+    .card-title {
+      font-family: $font-secondary;
+      color: $color-dark;
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .card-text {
+      color: $color-text-light;
+      font-size: $font-size-sm;
+      margin-bottom: $spacing-md;
+    }
+    
+    .price {
+      font-size: $font-size-xl;
+      color: $color-primary-dark;
+      font-weight: 700;
+      margin-bottom: $spacing-sm;
+    }
+  }
+  
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color-primary-dark, 0.9);
+    @include flex-center;
+    opacity: 0;
+    @include transition(opacity, 0.3s, ease);
+    
+    .card:hover & {
+      opacity: 1;
+    }
+  }
+}
+
+.testimonial-card {
+  background-color: $color-secondary;
+  padding: $spacing-xl;
+  border-radius: $radius-lg;
+  text-align: center;
+  height: 100%;
+  
+  .testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: $radius-round;
+    object-fit: cover;
+    margin: 0 auto $spacing-md;
+    border: 3px solid $color-primary;
+  }
+  
+  .testimonial-text {
+    font-style: italic;
+    color: $color-text;
+    margin-bottom: $spacing-md;
+  }
+  
+  .testimonial-author {
+    font-weight: 600;
+    color: $color-dark;
+  }
+}

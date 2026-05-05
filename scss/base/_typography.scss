@@ -1,0 +1,49 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+h1, h2, h3, h4, h5, h6 {
+  @extend %heading-style;
+  margin-bottom: $spacing-md;
+}
+
+h1 { font-size: $font-size-hero; }
+h2 { font-size: $font-size-xxl; }
+h3 { font-size: $font-size-xl; }
+h4 { font-size: $font-size-lg; }
+h5 { font-size: $font-size-base; }
+h6 { font-size: $font-size-sm; }
+
+p {
+  margin-bottom: $spacing-md;
+  color: $color-text-light;
+  line-height: 1.8;
+}
+
+.section-title {
+  @extend %heading-style;
+  font-size: $font-size-xxl;
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  position: relative;
+  
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: $color-primary;
+    margin: $spacing-sm auto 0;
+  }
+  
+  @include respond-to(mobile) {
+    font-size: $font-size-xl;
+  }
+}
+
+.section-subtitle {
+  text-align: center;
+  color: $color-text-light;
+  margin-bottom: $spacing-xxl;
+  font-size: $font-size-lg;
+}

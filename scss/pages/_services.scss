@@ -1,0 +1,93 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+.services-page {
+  @extend %section-padding;
+  
+  .service-item {
+    padding: $spacing-xl;
+    background-color: $color-white;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    margin-bottom: $spacing-lg;
+    @include transition(all, 0.3s, ease);
+    
+    &:hover {
+      box-shadow: $shadow-lg;
+      transform: translateX(10px);
+    }
+    
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      @include flex-center;
+      background-color: $color-secondary;
+      border-radius: $radius-round;
+      margin-bottom: $spacing-md;
+      font-size: $font-size-xxl;
+      color: $color-primary-dark;
+    }
+    
+    h3 {
+      color: $color-dark;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .service-price {
+      font-size: $font-size-xl;
+      color: $color-primary-dark;
+      font-weight: 700;
+      margin-top: $spacing-md;
+    }
+  }
+}
+
+.pricing-table {
+  background-color: $color-light;
+  padding: $spacing-xxl 0;
+  
+  .price-card {
+    background-color: $color-white;
+    border-radius: $radius-lg;
+    padding: $spacing-xl;
+    text-align: center;
+    box-shadow: $shadow-sm;
+    @include transition(all, 0.3s, ease);
+    
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: $shadow-lg;
+    }
+    
+    &.featured {
+      border: 2px solid $color-primary;
+      position: relative;
+      
+      &::before {
+        content: 'POPULAR';
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $color-primary;
+        color: $color-white;
+        padding: $spacing-xs $spacing-md;
+        border-radius: $radius-sm;
+        font-size: $font-size-xs;
+        font-weight: 600;
+      }
+    }
+    
+    .price-amount {
+      font-size: $font-size-hero;
+      color: $color-primary-dark;
+      font-weight: 700;
+      
+      span {
+        font-size: $font-size-base;
+        color: $color-text-light;
+      }
+    }
+  }
+}

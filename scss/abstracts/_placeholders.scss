@@ -1,0 +1,43 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+%section-padding {
+  padding: $spacing-xxl 0;
+  
+  @include respond-to(tablet) {
+    padding: $spacing-xl 0;
+  }
+  
+  @include respond-to(mobile) {
+    padding: $spacing-lg 0;
+  }
+}
+
+%container-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+  
+  @include respond-to(tablet) {
+    padding: 0 $spacing-md;
+  }
+}
+
+%heading-style {
+  font-family: $font-secondary;
+  color: $color-dark;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+%text-center {
+  text-align: center;
+}
+
+%animate-fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+%animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}

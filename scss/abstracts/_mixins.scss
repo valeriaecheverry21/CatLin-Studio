@@ -1,0 +1,57 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $bp-mobile) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $bp-tablet) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (max-width: $bp-desktop) { @content; }
+  } @else if $breakpoint == large {
+    @media (max-width: $bp-large) { @content; }
+  }
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin gradient-bg($color1: $color-primary, $color2: $color-primary-dark) {
+  background: linear-gradient(135deg, $color1 0%, $color2 100%);
+}
+
+@mixin card-hover {
+  @include transition(transform, 0.3s, ease);
+  &:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@mixin button-style($bg-color: $color-primary, $text-color: $color-white) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-md;
+  font-weight: 600;
+  @include transition(all, 0.3s, ease);
+  
+  &:hover {
+    background-color: color.adjust($bg-color, $lightness: -10%);
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+}

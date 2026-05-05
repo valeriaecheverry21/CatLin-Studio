@@ -1,0 +1,63 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.navbar-custom {
+  background-color: $color-white;
+  padding: $spacing-sm 0;
+  box-shadow: $shadow-sm;
+  @include transition(all, 0.3s, ease);
+  
+  &.scrolled {
+    padding: $spacing-xs 0;
+    box-shadow: $shadow-md;
+  }
+  
+  .navbar-brand {
+    font-family: $font-secondary;
+    font-size: $font-size-xl;
+    color: $color-primary-dark;
+    font-weight: 700;
+    
+    span {
+      color: $color-dark;
+    }
+  }
+  
+  .nav-link {
+    color: $color-text;
+    font-weight: 500;
+    padding: $spacing-xs $spacing-sm;
+    margin: 0 $spacing-xs;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: $spacing-sm;
+      right: $spacing-sm;
+      height: 2px;
+      background-color: $color-primary;
+      transform: scaleX(0);
+      @include transition(transform, 0.3s, ease);
+    }
+    
+    &:hover,
+    &.active {
+      color: $color-primary-dark;
+      
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+  
+  .navbar-toggler {
+    border: 1px solid $color-primary;
+    padding: $spacing-xs;
+    
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28232, 180, 184, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+}

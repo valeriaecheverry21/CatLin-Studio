@@ -1,0 +1,62 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+.about-page {
+  @extend %section-padding;
+  
+  .team-member {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    
+    .member-img {
+      width: 200px;
+      height: 200px;
+      border-radius: $radius-round;
+      object-fit: cover;
+      margin: 0 auto $spacing-md;
+      border: 4px solid $color-primary;
+      @include transition(all, 0.3s, ease);
+    }
+    
+    &:hover .member-img {
+      transform: rotate(5deg) scale(1.05);
+      border-color: $color-primary-dark;
+    }
+    
+    h4 {
+      color: $color-dark;
+      margin-bottom: $spacing-xs;
+    }
+    
+    .member-role {
+      color: $color-primary-dark;
+      font-weight: 500;
+      margin-bottom: $spacing-sm;
+    }
+  }
+}
+
+.mission-vision {
+  background-color: $color-secondary;
+  padding: $spacing-xxl 0;
+  
+  .mv-card {
+    background-color: $color-white;
+    padding: $spacing-xl;
+    border-radius: $radius-lg;
+    text-align: center;
+    height: 100%;
+    @include transition(transform, 0.3s, ease);
+    
+    &:hover {
+      transform: translateY(-10px);
+    }
+    
+    .mv-icon {
+      font-size: $font-size-hero;
+      color: $color-primary;
+      margin-bottom: $spacing-md;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "catlin-studio",
+  "version": "1.0.0",
+  "description": "CatLin Studio - Estudio de belleza y bienestar (manicura, cejas, pestañas, masajes)",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass scss/main.scss assets/css/styles.css --watch",
+    "build-css": "sass scss/main.scss assets/css/styles.css --style=compressed"
+  },
+  "keywords": ["belleza", "manicura", "cejas", "pestañas", "masajes"],
+  "author": "CatLin Studio",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.63.0"
+  }
+}

@@ -1,0 +1,96 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+.hero {
+  min-height: 100vh;
+  @include gradient-bg;
+  @include flex-center;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba($color-white, 0.1);
+    border-radius: $radius-round;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: $color-white;
+    
+    h1 {
+      font-size: $font-size-hero;
+      margin-bottom: $spacing-md;
+      @extend %animate-fade-in;
+      
+      @include respond-to(tablet) {
+        font-size: $font-size-xxl;
+      }
+      
+      @include respond-to(mobile) {
+        font-size: $font-size-xl;
+      }
+    }
+    
+    p {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-xl;
+      color: rgba($color-white, 0.9);
+      @extend %animate-slide-up;
+    }
+  }
+}
+
+.services-preview {
+  @extend %section-padding;
+  background-color: $color-light;
+}
+
+.about-preview {
+  @extend %section-padding;
+  
+  .about-img {
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    @include transition(transform, 0.5s, ease);
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.testimonials {
+  @extend %section-padding;
+  background-color: $color-secondary;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

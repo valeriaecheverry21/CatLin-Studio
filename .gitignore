@@ -1,0 +1,6 @@
+node_modules/
+assets/css/styles.css.map
+.DS_Store
+*.log
+.vscode/
+.idea/

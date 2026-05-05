@@ -1,0 +1,67 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+.contact-page {
+  @extend %section-padding;
+  
+  .contact-form {
+    background-color: $color-white;
+    padding: $spacing-xl;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-md;
+    
+    .form-control {
+      border: 1px solid $color-secondary;
+      border-radius: $radius-sm;
+      padding: $spacing-sm;
+      @include transition(border-color, 0.3s, ease);
+      
+      &:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 0 0.2rem rgba($color-primary, 0.25);
+      }
+    }
+  }
+  
+  .contact-info {
+    .info-item {
+      display: flex;
+      align-items: start;
+      margin-bottom: $spacing-lg;
+      
+      .info-icon {
+        width: 50px;
+        height: 50px;
+        @include flex-center;
+        background-color: $color-secondary;
+        border-radius: $radius-round;
+        margin-right: $spacing-md;
+        color: $color-primary-dark;
+        flex-shrink: 0;
+      }
+      
+      .info-content {
+        h5 {
+          color: $color-dark;
+          margin-bottom: $spacing-xs;
+        }
+        
+        p {
+          color: $color-text-light;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.map-section {
+  padding-bottom: $spacing-xxl;
+  
+  .map-container {
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+  }
+}
