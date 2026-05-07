@@ -40,6 +40,24 @@
       font-weight: 700;
       margin-top: $spacing-md;
     }
+    
+    @include respond-to(mobile) {
+      padding: $spacing-md;
+      
+      .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: $font-size-xl;
+      }
+      
+      h3 {
+        font-size: $font-size-lg;
+      }
+      
+      ul li {
+        font-size: $font-size-sm;
+      }
+    }
   }
 }
 
@@ -87,6 +105,14 @@
       span {
         font-size: $font-size-base;
         color: $color-text-light;
+      }
+    }
+    
+    @include respond-to(mobile) {
+      padding: $spacing-md;
+      
+      .price-amount {
+        font-size: $font-size-xxl;
       }
     }
   }

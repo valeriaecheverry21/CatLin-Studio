@@ -34,6 +34,19 @@
       font-weight: 500;
       margin-bottom: $spacing-sm;
     }
+    
+    @include respond-to(mobile) {
+      .member-img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+  
+  @include respond-to(mobile) {
+    h2 {
+      font-size: $font-size-xl;
+    }
   }
 }
 
@@ -57,6 +70,19 @@
       font-size: $font-size-hero;
       color: $color-primary;
       margin-bottom: $spacing-md;
+    }
+    
+    @include respond-to(mobile) {
+      padding: $spacing-md;
+      height: auto;
+      
+      .mv-icon {
+        font-size: $font-size-xxl;
+      }
+      
+      h3 {
+        font-size: $font-size-lg;
+      }
     }
   }
 }

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrega Final - CatLin Studio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 60px;
+        }
+        
+        /* Portada */
+        .cover {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #e8b4b8 0%, #d4919b 100%);
+            color: white;
+            margin: -40px -60px 40px -60px;
+            page-break-after: always;
+        }
+        
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .cover h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+        
+        .cover .meta {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* Títulos */
+        h2.section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #d4919b;
+            border-bottom: 3px solid #e8b4b8;
+            padding-bottom: 10px;
+            margin: 40px 0 20px 0;
+            page-break-before: always;
+        }
+        
+        h3.subtitle {
+            font-size: 22px;
+            color: #3a3a3a;
+            margin: 30px 0 15px 0;
+        }
+        
+        h4 {
+            font-size: 18px;
+            color: #4a4a4a;
+            margin: 20px 0 10px 0;
+        }
+        
+        /* Texto */
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: #fafafa;
+            border-left: 4px solid #e8b4b8;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Listas */
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Código */
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.5;
+            overflow-x: auto;
+            margin: 20px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .code-inline {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #d4919b;
+        }
+        
+        /* Estructura de carpetas */
+        .folder-structure {
+            background: #f5e6e8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+        
+        /* Placeholder para imagen */
+        .image-placeholder {
+            background: #f5e6e8;
+            border: 2px dashed #d4919b;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            color: #d4919b;
+            font-weight: 600;
+        }
+        
+        .image-placeholder i {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        /* Tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #e8b4b8;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        /* Footer */
+        .page-footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 12px;
+        }
+        
+        /* Print styles */
+        @media print {
+            body { background: white; }
+            .cover { 
+                background: #e8b4b8 !important; 
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .code-block { 
+                background: #2d2d2d !important; 
+                color: #f8f8f2 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                page-break-inside: avoid;
+            }
+            .highlight-box, .folder-structure { 
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            h2.section-title { page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- PORTADA -->
+        <div class="cover">
+            <h1>CatLin Studio</h1>
+            <h2>Entrega Final - Desarrollo de Web Estática</h2>
+            <div class="meta">
+                <p>Proyecto: HTML5 + SASS + Bootstrap 5</p>
+                <p>Temática: Estudio de Belleza (Manicura, Cejas, Pestañas, Masajes)</p>
+                <p>Fecha: Mayo 2026</p>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 1: INTRODUCCIÓN -->
+        <h2 class="section-title">1. Introducción del Proyecto</h2>
+        
+        <h3 class="subtitle">Descripción General</h3>
+        <p><strong>Nombre del sitio web:</strong> CatLin Studio</p>
+        <p><strong>Tipo de sitio:</strong> Institucional (Negocio ficticio de servicios de belleza)</p>
+        <p><strong>Objetivo del sitio:</strong> Brindar una presencia web profesional para un estudio de belleza que ofrece servicios de manicura, diseño de cejas, extensiones de pestañas y masajes relajantes. El sitio permite a las clientas conocer los servicios, precios, equipo y contactar fácilmente.</p>
+        <p><strong>Público objetivo:</strong> Mujeres de 18 a 55 años interesadas en cuidado personal, belleza y bienestar.</p>
+        
+        <div class="highlight-box">
+            <p><strong>Descripción de la temática:</strong> CatLin Studio es un sitio web estático desarrollado con HTML5 semántico, SASS y Bootstrap 5. Cuenta con 5 secciones: Inicio, Servicios, Nosotros, Contacto y Galería. El diseño utiliza una paleta de colores suaves (rosas y tonos neutros) que transmiten elegancia y confianza. Se implementaron animaciones AOS para mejorar la experiencia de usuario.</p>
+        </div>
+
+        <!-- SECCIÓN 2: ESTRUCTURA HTML -->
+        <h2 class="section-title">2. Estructura HTML</h2>
+        
+        <h3 class="subtitle">Estructura de Carpetas</h3>
+        <div class="folder-structure">
+CatLin-Studio/<br>
+├── index.html<br>
+├── pagina1.html (Servicios)<br>
+├── pagina2.html (Nosotros)<br>
+├── pagina3.html (Contacto)<br>
+├── pagina4.html (Galería)<br>
+├── assets/<br>
+│   ├── css/styles.css (generado desde SASS)<br>
+│   ├── js/main.js<br>
+│   └── images/<br>
+├── scss/<br>
+│   ├── abstracts/ (_variables.scss, _mixins.scss, _placeholders.scss)<br>
+│   ├── base/ (_reset.scss, _typography.scss)<br>
+│   ├── components/ (_nav.scss, _card.scss, _button.scss)<br>
+│   ├── layout/ (_header.scss, _footer.scss, _grid.scss)<br>
+│   ├── pages/ (_home.scss, _services.scss, _about.scss, _contact.scss)<br>
+│   └── main.scss<br>
+└── package.json
+        </div>
+
+        <h3 class="subtitle">Capturas de Código HTML</h3>
+        <p><em>Insertar capturas de pantalla de los archivos HTML en el orden solicitado:</em></p>
+        
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 1: index.html (código completo)
+        </div>
+        
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 2: pagina1.html (Servicios)
+        </div>
+        
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 3: pagina2.html (Nosotros)
+        </div>
+        
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 4: pagina3.html (Contacto)
+        </div>
+        
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 5: pagina4.html (Galería)
+        </div>
+
+        <h3 class="subtitle">Características HTML Implementadas</h3>
+        <ul>
+            <li><strong>Etiquetas semánticas:</strong> <span class="code-inline">&lt;header&gt;</span>, <span class="code-inline">&lt;main&gt;</span>, <span class="code-inline">&lt;section&gt;</span>, <span class="code-inline">&lt;footer&gt;</span>, <span class="code-inline">&lt;nav&gt;</span>, <span class="code-inline">&lt;article&gt;</span></li>
+            <li><strong>SEO:</strong> Meta tags descriptivos, Open Graph, títulos únicos por página, preconnect para performance</li>
+            <li><strong>Accesibilidad:</strong> Atributos <span class="code-inline">aria-label</span> en iconos sociales, texto alternativo en imágenes</li>
+            <li><strong>Navegación:</strong> Menú consistente en las 5 páginas con clase <span class="code-inline">active</span> en la página actual</li>
+            <li><strong>Bootstrap 5:</strong> Uso de grillas, cards, formularios y componentes responsivos</li>
+            <li><strong>AOS:</strong> Atributos <span class="code-inline">data-aos</span> para animaciones al hacer scroll</li>
+        </ul>
+
+        <h3 class="subtitle">Ejemplo de Código HTML (index.html)</h3>
+        <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="description" content="CatLin Studio - Estudio de belleza..."&gt;
+    &lt;meta property="og:title" content="CatLin Studio - Belleza y Bienestar"&gt;
+    &lt;title&gt;CatLin Studio | Estudio de Belleza y Bienestar&lt;/title&gt;
+    
+    &lt;!-- Preconnect para performance --&gt;
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+    
+    &lt;!-- Bootstrap 5 CSS --&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+    
+    &lt;!-- CSS generado desde SASS --&gt;
+    &lt;link rel="stylesheet" href="assets/css/styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav class="navbar navbar-expand-lg navbar-custom fixed-top"&gt;
+            &lt;a class="navbar-brand" href="index.html"&gt;CatLin &lt;span&gt;Studio&lt;/span&gt;&lt;/a&gt;
+            &lt;!-- Navegación con enlaces a las 5 páginas --&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;section class="hero"&gt;
+            &lt;!-- Hero section con animaciones --&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer class="footer"&gt;
+        &lt;!-- Footer con 4 columnas --&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+
+        <!-- SECCIÓN 3: ESTILOS SASS -->
+        <h2 class="section-title">3. Estilos CSS / SASS</h2>
+        
+        <h3 class="subtitle">Arquitectura SASS (Patrón 7-1)</h3>
+        <p>Se utilizó la estructura estándar 7-1: 7 carpetas para partials + 1 archivo principal (<span class="code-inline">main.scss</span>).</p>
+        
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura: Estructura de carpetas del proyecto (explorador de archivos)
+        </div>
+
+        <h3 class="subtitle">Uso de Variables (_variables.scss)</h3>
+        <div class="code-block">// Colores principales
+$color-primary: #e8b4b8;
+$color-primary-dark: #d4919b;
+$color-secondary: #f5e6e8;
+$color-dark: #3a3a3a;
+$color-light: #fafafa;
+
+// Fuentes
+$font-primary: 'Poppins', sans-serif;
+$font-secondary: 'Playfair Display', serif;
+
+// Breakpoints
+$bp-mobile: 576px;
+$bp-tablet: 768px;
+$bp-desktop: 992px;
+
+// Espaciado
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 4rem;</div>
+
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura: scss/abstracts/_variables.scss
+        </div>
+
+        <h3 class="subtitle">Uso de Mixins (_mixins.scss)</h3>
+        <p>Los mixins permiten reutilizar bloques de código con o sin parámetros.</p>
+        <div class="code-block">@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: $bp-tablet) { @content; }
+  } @else if $breakpoint == mobile {
+    @media (max-width: $bp-mobile) { @content; }
+  }
+}
+
+@mixin card-hover {
+  @include transition(transform, 0.3s, ease);
+  &:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@mixin button-style($bg-color: $color-primary) {
+  background-color: $bg-color;
+  color: $color-white;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-md;
+  
+  &:hover {
+    background-color: color.adjust($bg-color, $lightness: -10%);
+    transform: translateY(-2px);
+  }
+}</div>
+
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura: scss/abstracts/_mixins.scss
+        </div>
+
+        <h3 class="subtitle">Uso de Nesting (Anidación)</h3>
+        <p>SASS permite anidar selectores para mantener el código organizado.</p>
+        <div class="code-block">.navbar-custom {
+  background-color: $color-white;
+  padding: $spacing-sm 0;
+  box-shadow: $shadow-sm;
+  
+  .navbar-brand {
+    font-family: $font-secondary;
+    color: $color-primary-dark;
+    
+    span { color: $color-dark; }
+  }
+  
+  .nav-link {
+    color: $color-text;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: $spacing-sm;
+      right: $spacing-sm;
+      height: 2px;
+      background-color: $color-primary;
+      transform: scaleX(0);
+      @include transition(transform, 0.3s, ease);
+    }
+    
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+}</div>
+
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura: scss/components/_nav.scss (ejemplo de nesting)
+        </div>
+
+        <h3 class="subtitle">Uso de Extend/Placeholders</h3>
+        <p>Los placeholders permiten compartir estilos entre selectores sin duplicar código.</p>
+        <div class="code-block">// Placeholder
+%section-padding {
+  padding: $spacing-xxl 0;
+  
+  @include respond-to(tablet) {
+    padding: $spacing-xl 0;
+  }
+  
+  @include respond-to(mobile) {
+    padding: $spacing-lg 0;
+  }
+}
+
+// Uso en páginas
+.hero { 
+  @extend %section-padding; 
+  @include gradient-bg;
+}
+
+.services-preview { 
+  @extend %section-padding; 
+  background-color: $color-light;
+}
+
+.about-preview { 
+  @extend %section-padding; 
+}</div>
+
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura: scss/abstracts/_placeholders.scss y scss/pages/_home.scss
+        </div>
+
+        <h3 class="subtitle">Decisiones de Diseño Visual</h3>
+        <table>
+            <tr>
+                <th>Elemento</th>
+                <th>Decisión</th>
+                <th>Razón</th>
+            </tr>
+            <tr>
+                <td>Paleta de colores</td>
+                <td>Rosas suaves (#e8b4b8, #d4919b)</td>
+                <td>Evocan feminidad, belleza y elegancia</td>
+            </tr>
+            <tr>
+                <td>Tipografía</td>
+                <td>Poppins (texto), Playfair Display (títulos)</td>
+                <td>Moderna y legible + elegante para títulos</td>
+            </tr>
+            <tr>
+                <td>Bootstrap</td>
+                <td>Personalizado vía SASS</td>
+                <td>Mantener identidad propia, no genérica</td>
+            </tr>
+            <tr>
+                <td>Espaciado</td>
+                <td>Sistema con variables ($spacing-*)</td>
+                <td>Consistencia en todo el sitio</td>
+            </tr>
+        </table>
+
+        <!-- SECCIÓN 4: RESPONSIVE Y ESTILOS AVANZADOS -->
+        <h2 class="section-title">4. Responsive Design y Estilos Avanzados</h2>
+        
+        <h3 class="subtitle">Adaptación a Diferentes Dispositivos</h3>
+        <p>El sitio utiliza un enfoque <strong>mobile-first</strong>, donde el diseño base es para móviles y luego se adapta a tablets y desktop usando media queries a través de mixins SASS.</p>
+        
+        <div class="code-block">// Ejemplo de responsive en SASS
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+  
+  @include respond-to(desktop) { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  
+  @include respond-to(mobile) { 
+    grid-template-columns: 1fr; 
+  }
+}
+
+// Tipografía responsiva
+html {
+  font-size: 16px;
+  
+  @include respond-to(tablet) { 
+    font-size: 15px; 
+  }
+  
+  @include respond-to(mobile) { 
+    font-size: 14px; 
+  }
+}</div>
+
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 1: Sitio en Desktop (1920px de ancho)
+        </div>
+        
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 2: Sitio en Tablet (768px de ancho)
+        </div>
+        
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 3: Sitio en Mobile (375px de ancho)
+        </div>
+
+        <h3 class="subtitle">Animaciones y Transiciones</h3>
+        <p>Se implementaron tres tipos de animaciones:</p>
+        <ol>
+            <li><strong>AOS (Animate On Scroll):</strong> Animaciones al hacer scroll (fade-up, fade-left, zoom-in)</li>
+            <li><strong>Transiciones CSS:</strong> Efectos hover en cards, botones y enlaces</li>
+            <li><strong>Transformaciones:</strong> <span class="code-inline">transform: translateY(-8px)</span> en cards al hacer hover</li>
+        </ol>
+
+        <div class="code-block">// Animación de flotación en el hero
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: rgba($color-white, 0.1);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+// Transición en botones
+.btn-custom {
+  @include transition(all, 0.3s, ease);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+}</div>
+
+        <!-- SECCIÓN 5: REPOSITORIO GITHUB -->
+        <h2 class="section-title">5. Repositorio de GitHub</h2>
+        
+        <h3 class="subtitle">Versionado del Proyecto</h3>
+        <p>El proyecto fue versionado correctamente usando Git y subido a GitHub para demostrar el control de versiones durante el desarrollo.</p>
+        
+        <div class="code-block"># Comandos utilizados:
+git init
+git add .
+git commit -m "Initial commit: Proyecto CatLin Studio"
+git remote add origin https://github.com/USUARIO/catlin-studio.git
+git branch -M main
+git push -u origin main</div>
+
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 1: Página principal del repositorio en GitHub
+        </div>
+        
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 2: Historial de commits en GitHub
+        </div>
+        
+        <h3 class="subtitle">Commits Realizados</h3>
+        <table>
+            <tr>
+                <th>Commit Hash</th>
+                <th>Mensaje</th>
+                <th>Descripción</th>
+            </tr>
+            <tr>
+                <td>ce38f50</td>
+                <td>Add .gitignore to exclude node_modules</td>
+                <td>Configuración inicial de Git</td>
+            </tr>
+            <tr>
+                <td>99c6a0d</td>
+                <td>Remove node_modules from tracking</td>
+                <td>Limpieza del repositorio</td>
+            </tr>
+            <tr>
+                <td>abbecd0</td>
+                <td>Add delivery content document</td>
+                <td>Documentación del proyecto</td>
+            </tr>
+        </table>
+
+        <!-- SECCIÓN 6: DEMO DEL SITIO WEB -->
+        <h2 class="section-title">6. Demo del Sitio Web</h2>
+        
+        <h3 class="subtitle">Despliegue en Servidor</h3>
+        <p>El sitio fue publicado en <strong>Vercel</strong> (o Netlify) para demostrar su funcionamiento en un entorno de producción.</p>
+        
+        <div class="highlight-box">
+            <p><strong>URL del sitio publicado:</strong><br>
+            <span style="color: #d4919b; font-size: 18px;">https://cat-lin-studio-58p5uca2f-valeriaecheverry21s-projects.vercel.app/</span><br>
+            <em>Sitio desplegado exitosamente en Vercel</em></p>
+        </div>
+
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 1: Home page en Desktop (sitio publicado)
+        </div>
+        
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 2: Página de Servicios en Tablet
+        </div>
+        
+        <div class="image-placeholder">
+            <i>📸</i>
+            Captura 3: Página de Contacto en Mobile con formulario
+        </div>
+
+        <h3 class="subtitle">Pasos para el Despliegue (Vercel)</h3>
+        <ol>
+            <li>Ir a <a href="https://vercel.com">vercel.com</a> y hacer login con GitHub</li>
+            <li>Click en "Add New Project"</li>
+            <li>Importar repositorio: <span class="code-inline">catlin-studio</span></li>
+            <li>Configuración: Framework = Other, Build Command = <span class="code-inline">npm run build-css</span>, Output = <span class="code-inline">.</span></li>
+            <li>Click "Deploy" y copiar la URL generada</li>
+        </ol>
+
+        <!-- SECCIÓN 7: REFLEXIÓN FINAL -->
+        <h2 class="section-title">7. Reflexión Final</h2>
+        
+        <div class="highlight-box">
+            <p>El desarrollo de <strong>CatLin Studio</strong> permitió aplicar de manera integral los conocimientos de HTML5 semántico, preprocesadores SASS y frameworks CSS como Bootstrap. La principal dificultad encontrada fue la configuración correcta de los módulos SASS (uso de <span class="code-inline">@use</span> en lugar de <span class="code-inline">@import</span>) y la compilación correcta respetando la arquitectura 7-1.</p>
+            
+            <p>Otro desafío fue personalizar Bootstrap manteniendo la identidad visual propia, logrando un sitio que no parece un template genérico. La implementación de AOS para animaciones mejoró significativamente la experiencia de usuario, haciendo que el sitio se sienta dinámico y moderno.</p>
+            
+            <p>El resultado es un sitio web institucional profesional, totalmente responsive y con un código mantenible gracias a la estructura de SASS. Se cumplieron todos los requisitos de la evaluación final.</p>
+        </div>
+
+        <div class="page-footer">
+            <p>CatLin Studio - Entrega Final de Proyecto | Desarrollo de Web Estática con HTML y SASS</p>
+            <p>© 2026 - Todos los derechos reservados</p>
+        </div>
+    </div>
+</body>
+</html>

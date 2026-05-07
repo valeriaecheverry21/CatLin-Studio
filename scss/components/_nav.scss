@@ -60,4 +60,32 @@
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28232, 180, 184, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
   }
+  
+  // Responsive mobile
+  @include respond-to(mobile) {
+    padding: $spacing-xs 0;
+    
+    .navbar-brand {
+      font-size: $font-size-lg;
+    }
+    
+    .nav-link {
+      padding: $spacing-sm $spacing-md;
+      margin: 0;
+      border-bottom: 1px solid $color-secondary;
+      
+      &::after {
+        display: none;
+      }
+    }
+    
+    .navbar-collapse {
+      background-color: $color-white;
+      border-radius: $radius-md;
+      box-shadow: $shadow-md;
+      margin-top: $spacing-xs;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+  }
 }
