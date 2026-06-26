@@ -1,0 +1,99 @@
+[
+  {
+    "id": 1,
+    "name": "Manicura Clásica",
+    "category": "manicura",
+    "description": "Manicura tradicional con esmaltado, limado y cutículas",
+    "price": 25,
+    "duration": 45,
+    "image": "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400&h=250&fit=crop",
+    "icon": "fa-hand-sparkles",
+    "subservices": [
+      { "name": "Manicura clásica", "price": 25 },
+      { "name": "Semipermanente", "price": 35 },
+      { "name": "Diseño nail art", "price": 45 },
+      { "name": "Tratamiento reparador", "price": 30 }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Diseño de Cejas",
+    "category": "cejas",
+    "description": "Perfilado y diseño personalizado para enmarcar tu rostro",
+    "price": 15,
+    "duration": 30,
+    "image": "https://images.unsplash.com/photo-1566913469504-84568d6ce35a?w=400&h=250&fit=crop",
+    "icon": "fa-eye",
+    "subservices": [
+      { "name": "Perfilado", "price": 15 },
+      { "name": "Tintura", "price": 20 },
+      { "name": "Laminado", "price": 35 },
+      { "name": "Diseño completo", "price": 40 }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Extensiones de Pestañas",
+    "category": "pestanas",
+    "description": "Realza tu mirada con extensiones profesionales",
+    "price": 35,
+    "duration": 60,
+    "image": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=250&fit=crop",
+    "icon": "fa-eye-low-vision",
+    "subservices": [
+      { "name": "Extensiones clásicas", "price": 35 },
+      { "name": "Volume ruso", "price": 50 },
+      { "name": "Lifting de pestañas", "price": 30 },
+      { "name": "Tintura de pestañas", "price": 20 }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Masajes Relajantes",
+    "category": "masajes",
+    "description": "Libera tensiones y renueva energías con nuestros masajes",
+    "price": 40,
+    "duration": 60,
+    "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&h=250&fit=crop",
+    "icon": "fa-spa",
+    "subservices": [
+      { "name": "Masaje relajante 60min", "price": 40 },
+      { "name": "Masaje descontracturante", "price": 45 },
+      { "name": "Piedras calientes", "price": 55 },
+      { "name": "Reflexología podal", "price": 35 }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Paquete Básico",
+    "category": "paquetes",
+    "description": "Manicura clásica + perfilado de cejas + consulta",
+    "price": 50,
+    "duration": 75,
+    "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=250&fit=crop",
+    "icon": "fa-gem",
+    "subservices": []
+  },
+  {
+    "id": 6,
+    "name": "Paquete Premium",
+    "category": "paquetes",
+    "description": "Semipermanente + cejas + lifting de pestañas + masaje 30min",
+    "price": 80,
+    "duration": 120,
+    "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=250&fit=crop",
+    "icon": "fa-crown",
+    "subservices": []
+  },
+  {
+    "id": 7,
+    "name": "Paquete Deluxe",
+    "category": "paquetes",
+    "description": "Servicio completo: manicura + cejas + pestañas + masaje 60min",
+    "price": 120,
+    "duration": 180,
+    "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400&h=250&fit=crop",
+    "icon": "fa-star",
+    "subservices": []
+  }
+]

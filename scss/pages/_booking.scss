@@ -1,0 +1,183 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.booking-page {
+    min-height: 60vh;
+}
+
+.booking-step {
+    background-color: $color-white;
+    border-radius: $radius-lg;
+    padding: $spacing-lg;
+    margin-bottom: $spacing-lg;
+    box-shadow: $shadow-sm;
+    border: 1px solid rgba($color-primary, 0.1);
+
+    .step-header {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        margin-bottom: $spacing-md;
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: $color-primary;
+            color: $color-white;
+            border-radius: $radius-round;
+            font-weight: 700;
+            font-size: $font-size-sm;
+            flex-shrink: 0;
+        }
+
+        h3 {
+            margin: 0;
+            font-family: $font-secondary;
+            color: $color-dark;
+        }
+    }
+}
+
+.booking-sidebar {
+    position: sticky;
+    top: 100px;
+
+    .card {
+        border: none;
+        box-shadow: $shadow-md;
+        border-radius: $radius-lg;
+        overflow: hidden;
+    }
+
+    .card-header.bg-custom {
+        background: linear-gradient(135deg, $color-primary-dark, $color-primary);
+    }
+
+    .list-group-item {
+        border: none;
+        border-bottom: 1px solid $color-secondary;
+        padding: $spacing-sm $spacing-xs;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .remove-service {
+        width: 28px;
+        height: 28px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-size: $font-size-lg;
+        line-height: 1;
+        border-radius: $radius-round;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: $color-white;
+        }
+    }
+}
+
+.filter-buttons {
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+
+    .btn-outline-custom {
+        border: 2px solid $color-primary;
+        color: $color-primary-dark;
+        background: transparent;
+        border-radius: 50px;
+        padding: $spacing-xs $spacing-md;
+        font-size: $font-size-sm;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+
+        &.active {
+            background: linear-gradient(135deg, $color-primary-dark, $color-primary);
+            color: $color-white;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba($color-primary-dark, 0.3);
+        }
+    }
+}
+
+.subservices-list {
+    background-color: $color-light;
+    border-radius: $radius-md;
+    padding: $spacing-sm;
+    font-size: $font-size-xs;
+
+    li {
+        padding: 4px 0;
+        border-bottom: 1px dashed rgba(0,0,0,0.05);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .text-primary {
+            color: $color-primary-dark;
+        }
+    }
+}
+
+.service-card {
+    .badge.bg-custom {
+        background: linear-gradient(135deg, $color-primary-dark, $color-primary);
+        font-size: $font-size-sm;
+        padding: $spacing-xs $spacing-sm;
+    }
+
+    .btn-add-service {
+        white-space: nowrap;
+    }
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.text-custom {
+    color: $color-primary-dark;
+}
+
+.spinner-border.text-custom {
+    border-right-color: transparent;
+    color: $color-primary-dark;
+}
+
+.testimonial-stars {
+    color: #ffc107;
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-xs;
+    letter-spacing: 2px;
+}
+
+@media (max-width: $bp-tablet) {
+    .booking-sidebar {
+        position: static;
+        margin-top: $spacing-lg;
+    }
+
+    .booking-step {
+        padding: $spacing-md;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+}
