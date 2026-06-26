@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "María González",
+    "text": "El mejor servicio de manicura que he probado. Siempre salgo encantada con el diseño y la atención.",
+    "rating": 5,
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop"
+  },
+  {
+    "id": 2,
+    "name": "Ana Martínez",
+    "text": "Las extensiones de pestañas quedaron perfectas. Muy naturales y hermosas. Recomiendo 100%.",
+    "rating": 5,
+    "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop"
+  },
+  {
+    "id": 3,
+    "name": "Laura Sánchez",
+    "text": "Los masajes son increíbles. Salgo renovada cada vez que vengo. El ambiente es muy relajante.",
+    "rating": 5,
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop"
+  },
+  {
+    "id": 4,
+    "name": "Carolina López",
+    "text": "Me hice el diseño de cejas y quedaron espectaculares. Cambió completamente mi rostro.",
+    "rating": 5,
+    "image": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop"
+  },
+  {
+    "id": 5,
+    "name": "Valentina Díaz",
+    "text": "El paquete Premium es excelente. En una sola sesión me hicieron de todo y quedé hermosa.",
+    "rating": 5,
+    "image": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop"
+  },
+  {
+    "id": 6,
+    "name": "Sofía Ramírez",
+    "text": "Profesionales y muy cálidas. El estudio es precioso y se nota la pasión por lo que hacen.",
+    "rating": 5,
+    "image": "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=80&h=80&fit=crop"
+  }
+]

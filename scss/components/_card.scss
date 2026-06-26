@@ -19,6 +19,16 @@
     transform: scale(1.05);
   }
   
+  @include respond-to(mobile) {
+    .card-img-top {
+      height: 180px;
+    }
+    
+    .card-body {
+      padding: $spacing-md;
+    }
+  }
+  
   .card-body {
     padding: $spacing-lg;
     
@@ -85,5 +95,14 @@
   .testimonial-author {
     font-weight: 600;
     color: $color-dark;
+  }
+  
+  @include respond-to(mobile) {
+    padding: $spacing-md;
+    
+    .testimonial-img {
+      width: 60px;
+      height: 60px;
+    }
   }
 }

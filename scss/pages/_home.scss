@@ -19,6 +19,10 @@
     background: rgba($color-white, 0.1);
     border-radius: $radius-round;
     animation: float 6s ease-in-out infinite;
+    
+    @include respond-to(mobile) {
+      display: none;
+    }
   }
   
   .hero-content {
@@ -37,7 +41,8 @@
       }
       
       @include respond-to(mobile) {
-        font-size: $font-size-xl;
+        font-size: $font-size-xxl;
+        line-height: 1.2;
       }
     }
     
@@ -46,6 +51,20 @@
       margin-bottom: $spacing-xl;
       color: rgba($color-white, 0.9);
       @extend %animate-slide-up;
+      
+      @include respond-to(mobile) {
+        font-size: $font-size-base;
+        padding: 0 $spacing-sm;
+      }
+    }
+    
+    @include respond-to(mobile) {
+      padding: $spacing-lg $spacing-sm;
+      
+      .btn-custom {
+        font-size: $font-size-sm;
+        padding: $spacing-sm $spacing-md;
+      }
     }
   }
 }

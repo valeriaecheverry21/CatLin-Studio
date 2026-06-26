@@ -54,6 +54,37 @@
       }
     }
   }
+  
+  @include respond-to(mobile) {
+    .contact-form {
+      padding: $spacing-md;
+      
+      h3 {
+        font-size: $font-size-lg;
+      }
+      
+      .form-control {
+        font-size: $font-size-sm;
+      }
+      
+      .btn-custom {
+        width: 100%;
+      }
+    }
+    
+    .contact-info {
+      .info-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+        .info-icon {
+          margin-right: 0;
+          margin-bottom: $spacing-sm;
+        }
+      }
+    }
+  }
 }
 
 .map-section {
@@ -63,5 +94,11 @@
     border-radius: $radius-lg;
     overflow: hidden;
     box-shadow: $shadow-md;
+    
+    iframe {
+      @include respond-to(mobile) {
+        height: 300px;
+      }
+    }
   }
 }
