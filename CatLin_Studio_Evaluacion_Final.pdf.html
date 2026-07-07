@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>CatLin Studio — Evaluación Final JavaScript (PDF)</title>
+<style>
+  @page {
+    size: A4;
+    margin: 2cm 2.5cm;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #2d2d2d;
+    line-height: 1.6;
+    font-size: 11pt;
+  }
+
+  .slide {
+    page-break-after: always;
+    padding: 0;
+  }
+
+  .slide:last-child { page-break-after: avoid; }
+
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh;
+    border-bottom: none;
+  }
+
+  .cover h1 {
+    font-size: 36pt;
+    color: #d4919b;
+    margin-bottom: 0.3em;
+    letter-spacing: 1px;
+  }
+
+  .cover h2 {
+    font-size: 18pt;
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 2em;
+  }
+
+  .cover .sub {
+    font-size: 12pt;
+    color: #999;
+  }
+
+  .cover .line {
+    width: 80px;
+    height: 4px;
+    background: #e8b4b8;
+    margin: 1.5em auto;
+    border-radius: 2px;
+  }
+
+  h2 {
+    font-size: 18pt;
+    color: #d4919b;
+    margin-bottom: 0.6em;
+    padding-bottom: 4px;
+    border-bottom: 3px solid #e8b4b8;
+  }
+
+  h3 {
+    font-size: 13pt;
+    color: #3a3a3a;
+    margin-top: 1em;
+    margin-bottom: 0.4em;
+  }
+
+  h4 {
+    font-size: 11pt;
+    color: #555;
+    margin-top: 0.8em;
+    margin-bottom: 0.3em;
+  }
+
+  p { margin-bottom: 0.6em; }
+
+  ul, ol { margin: 0.4em 0 0.8em 1.5em; }
+  li { margin-bottom: 0.2em; }
+
+  pre {
+    background: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #e8b4b8;
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 8.5pt;
+    line-height: 1.4;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0.5em 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    margin: 0.6em 0;
+  }
+
+  th {
+    background: #d4919b;
+    color: #fff;
+    padding: 7px 10px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  tr:nth-child(even) td { background: #fafafa; }
+
+  .tag {
+    display: inline-block;
+    background: #e8b4b8;
+    color: #fff;
+    padding: 2px 9px;
+    border-radius: 10px;
+    font-size: 8.5pt;
+    margin: 2px 3px;
+  }
+
+  .tag-blue { background: #90caf9; }
+  .tag-green { background: #a5d6a7; color: #2e5e2e; }
+
+  .url {
+    background: #f5e6e8;
+    border: 1px solid #e8b4b8;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    font-size: 9pt;
+    word-break: break-all;
+    margin: 0.5em 0;
+  }
+
+  .note {
+    background: #fff8e1;
+    border-left: 4px solid #ffc107;
+    padding: 8px 12px;
+    border-radius: 3px;
+    font-size: 9.5pt;
+    margin: 0.6em 0;
+  }
+
+  .instruction {
+    background: #f3e5f5;
+    border-left: 4px solid #ce93d8;
+    padding: 8px 12px;
+    border-radius: 3px;
+    font-size: 9pt;
+    margin: 0.6em 0;
+  }
+
+  .two-col {
+    display: flex;
+    gap: 20px;
+  }
+
+  .two-col > div { flex: 1; }
+
+  .footer-note {
+    text-align: center;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #ddd;
+    color: #aaa;
+    font-size: 8.5pt;
+  }
+
+  .spacer { height: 1em; }
+
+  .commit-highlight td {
+    background: #f5e6e8 !important;
+    font-weight: 600;
+  }
+
+  @media screen {
+    body {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    .slide {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      padding: 2.5cm;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .slide {
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
+    }
+    .instruction { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PORTADA ============ -->
+<div class="slide cover">
+  <h1>CatLin Studio</h1>
+  <div class="line"></div>
+  <h2>Evaluación Final &mdash; JavaScript</h2>
+  <p class="sub">Aplicación Web Interactiva &middot; Simulador de Reservas</p>
+  <p class="sub" style="margin-top:2em;">Desarrollo Frontend &middot; 2026</p>
+</div>
+
+<!-- ============ SLIDE 1 ============ -->
+<div class="slide">
+<h2>1. Proyecto / Contexto</h2>
+
+<h3>¿Qué es CatLin Studio?</h3>
+<p>Estudio de belleza y bienestar con servicios de manicura, diseño de cejas, extensiones de pestañas y masajes relajantes. El sitio fue transformado de una página estática a una <strong>aplicación web interactiva</strong> que simula el proceso completo de reserva de turnos.</p>
+
+<h3>Circuito de negocio simulado</h3>
+<ol>
+  <li><strong>Explorar</strong> &mdash; Catálogo de servicios con filtros por categoría</li>
+  <li><strong>Seleccionar</strong> &mdash; Agregar servicios a la reserva con un clic</li>
+  <li><strong>Personalizar</strong> &mdash; Elegir fecha y horario disponible</li>
+  <li><strong>Registrarse</strong> &mdash; Completar datos personales (nombre, email, teléfono)</li>
+  <li><strong>Confirmar</strong> &mdash; Revisar resumen y confirmar la reserva</li>
+  <li><strong>Recibir</strong> &mdash; Obtener un número de reserva único como comprobante</li>
+</ol>
+
+<h3>Tecnologías aplicadas</h3>
+<p>
+  <span class="tag">HTML5 semántico</span>
+  <span class="tag">CSS3 / SASS (7-1)</span>
+  <span class="tag">Bootstrap 5</span>
+  <span class="tag tag-blue">JavaScript (ES6+)</span>
+  <span class="tag tag-green">SweetAlert2</span>
+  <span class="tag tag-blue">AOS</span>
+  <span class="tag">JSON + Fetch</span>
+  <span class="tag">Git / GitHub</span>
+  <span class="tag">Vercel</span>
+</p>
+
+<h3>Conceptos clave de JavaScript aplicados</h3>
+<table>
+  <tr><th>Concepto</th><th>Implementación</th></tr>
+  <tr><td>Variables (let/const)</td><td>Estado de reserva, configuración AOS, selección de servicios</td></tr>
+  <tr><td>Arrays y objetos</td><td>Servicios, testimonios, carrito de reserva, subservicios</td></tr>
+  <tr><td>Métodos funcionales</td><td>filter(), find(), map(), reduce() para filtrar y calcular totales</td></tr>
+  <tr><td>Manipulación del DOM</td><td>createElement, innerHTML, addEventListener, classList, querySelector</td></tr>
+  <tr><td>Eventos</td><td>click, submit, input, scroll &mdash; con delegación de eventos</td></tr>
+  <tr><td>Fetch asincrónico</td><td>Carga de services.json y testimonials.json con promesas</td></tr>
+  <tr><td>SweetAlert2 (librería)</td><td>Modales de confirmación, notificaciones, sin alert/confirm/prompt</td></tr>
+</table>
+</div>
+
+<!-- ============ SLIDE 2 ============ -->
+<div class="slide">
+<h2>2. Código &mdash; Archivos JSON</h2>
+
+<div class="instruction">📌 Abrir <code>data/services.json</code> y <code>data/testimonials.json</code> en VS Code y tomar captura.</div>
+
+<h3>data/services.json</h3>
+<pre>[
+  {
+    "id": 1,
+    "name": "Manicura Clásica",
+    "category": "manicura",
+    "description": "Manicura tradicional con esmaltado...",
+    "price": 25, "duration": 45,
+    "image": "https://images.unsplash.com/...",
+    "icon": "fa-hand-sparkles",
+    "subservices": [
+      { "name": "Manicura clásica", "price": 25 },
+      { "name": "Semipermanente", "price": 35 }
+    ]
+  },
+  { "id": 2, "name": "Diseño de Cejas", "category": "cejas", ... },
+  { "id": 3, "name": "Extensiones de Pestañas", "category": "pestanas", ... },
+  { "id": 4, "name": "Masajes Relajantes", "category": "masajes", ... },
+  { "id": 5, "name": "Paquete Básico", "category": "paquetes", ... },
+  { "id": 6, "name": "Paquete Premium", "category": "paquetes", ... },
+  { "id": 7, "name": "Paquete Deluxe", "category": "paquetes", ... }
+]</pre>
+
+<h3>data/testimonials.json</h3>
+<pre>[
+  { "id": 1, "name": "María González", "rating": 5,
+    "text": "El mejor servicio de manicura que he probado..." },
+  { "id": 2, "name": "Ana Martínez", "rating": 5,
+    "text": "Las extensiones de pestañas quedaron perfectas..." },
+  { "id": 3, "name": "Laura Sánchez", "rating": 5,
+    "text": "Los masajes son increíbles..." }
+]</pre>
+
+<div class="note">Ambos archivos se cargan mediante <code>fetch()</code> asincrónico. Los datos se renderizan en el DOM sin bloquear la interfaz.</div>
+</div>
+
+<!-- ============ SLIDE 3 ============ -->
+<div class="slide">
+<h2>3. Código &mdash; HTML5 (estructura)</h2>
+
+<div class="instruction">📌 Abrir <code>pagina3.html</code> y <code>pagina1.html</code> en VS Code. Capturar la estructura general (plegar secciones internas).</div>
+
+<h3>pagina3.html &mdash; Simulador de reserva</h3>
+<pre>&lt;section class="booking-page"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-lg-8"&gt;
+        &lt;!-- PASO 1: Selección de servicios --&gt;
+        &lt;div class="booking-step"&gt;
+          &lt;span class="step-number"&gt;1&lt;/span&gt;
+          &lt;h3&gt;Elegí tus servicios&lt;/h3&gt;
+          &lt;div class="row" id="bookingServices"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- PASO 2: Datos y horario --&gt;
+        &lt;div class="booking-step"&gt;
+          &lt;span class="step-number"&gt;2&lt;/span&gt;
+          &lt;h3&gt;Tus datos y horario&lt;/h3&gt;
+          &lt;form id="bookingForm"&gt;
+            &lt;!-- nombre, email, teléfono, fecha, hora --&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- SIDEBAR: Resumen de reserva --&gt;
+      &lt;div class="col-lg-4"&gt;
+        &lt;div class="booking-sidebar" id="bookingSummary"&gt;
+          &lt;!-- Total + lista de servicios seleccionados --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button id="confirmBookingBtn"&gt;Confirmar Reserva&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre>
+
+<h3>pagina1.html &mdash; Catálogo con filtros</h3>
+<pre>&lt;!-- Filtros por categoría (Bootstrap btn-group) --&gt;
+&lt;div class="btn-group filter-buttons"&gt;
+  &lt;button class="filter-btn active" data-filter="todos"&gt;Todos&lt;/button&gt;
+  &lt;button class="filter-btn" data-filter="manicura"&gt;Manicura&lt;/button&gt;
+  &lt;button class="filter-btn" data-filter="cejas"&gt;Cejas&lt;/button&gt;
+  &lt;button class="filter-btn" data-filter="pestanas"&gt;Pestañas&lt;/button&gt;
+  &lt;button class="filter-btn" data-filter="masajes"&gt;Masajes&lt;/button&gt;
+  &lt;button class="filter-btn" data-filter="paquetes"&gt;Paquetes&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Contenedor renderizado dinámicamente por JS --&gt;
+&lt;div class="row g-4" id="allServicesContainer"&gt;&lt;/div&gt;</pre>
+
+<div class="note">Todos los HTML usan etiquetas semánticas (&lt;header&gt;, &lt;main&gt;, &lt;section&gt;, &lt;footer&gt;, &lt;nav&gt;), atributos de accesibilidad (aria-label, alt) y meta tags para SEO.</div>
+</div>
+
+<!-- ============ SLIDE 4 ============ -->
+<div class="slide">
+<h2>4. Código &mdash; JavaScript</h2>
+
+<div class="instruction">📌 Abrir <code>assets/js/main.js</code> en VS Code. Capturar las secciones de fetch, render, eventos y booking.</div>
+
+<h3>Fetch de datos JSON</h3>
+<pre>function fetchJSON(url) {
+    return fetch(url).then(response => {
+        if (!response.ok) throw new Error('Error al cargar datos');
+        return response.json();
+    });
+}
+
+// Uso: cargar servicios
+fetchJSON('data/services.json')
+    .then(services => renderServices(services, container, true))
+    .catch(() => { /* fallback visual */ });</pre>
+
+<h3>Renderizado dinámico con el DOM</h3>
+<pre>function buildServiceCard(service, showAddButton) {
+    const col = document.createElement('div');
+    col.className = 'col-md-6 col-lg-4';
+    col.innerHTML = `
+        &lt;div class="service-card h-100"&gt;
+            &lt;img src="${service.image}" alt="${service.name}" loading="lazy"&gt;
+            &lt;div class="card-body"&gt;
+                &lt;h3&gt;${service.name}&lt;/h3&gt;
+                &lt;p&gt;${service.description}&lt;/p&gt;
+                &lt;span class="badge"&gt;$${service.price}&lt;/span&gt;
+                ${showAddButton ? '&lt;button&gt;Agregar&lt;/button&gt;' : ''}
+            &lt;/div&gt;
+        &lt;/div&gt;`;
+    return col;
+}</pre>
+
+<h3>Métodos funcionales de arrays</h3>
+<pre>// Filtrar por categoría
+const filtered = services.filter(s => s.category === categoria);
+
+// Buscar un servicio
+const service = services.find(s => s.id === id);
+
+// Calcular total de la reserva
+const total = bookingState.selectedServices
+    .reduce((acc, s) => acc + s.price, 0);</pre>
+
+<h3>Delegación de eventos</h3>
+<pre>// Un solo listener para todos los botones "Agregar"
+bookingContainer.addEventListener('click', (e) => {
+    const addBtn = e.target.closest('.btn-add-service');
+    if (!addBtn) return;
+    // lógica de agregado al carrito...
+});</pre>
+
+<h3>SweetAlert2 (sin alert/confirm)</h3>
+<pre>// Confirmación de reserva
+Swal.fire({
+    title: '¿Confirmar tu reserva?',
+    html: `&lt;div&gt;...resumen...&lt;/div&gt;`,
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Confirmar Reserva',
+    cancelButtonText: 'Cancelar'
+}).then((result) => {
+    if (result.isConfirmed) {
+        Swal.fire({
+            title: '¡Reserva Confirmada!',
+            html: `&lt;div&gt;...detalle + n° de reserva...&lt;/div&gt;`,
+            icon: 'success'
+        });
+    }
+});</pre>
+</div>
+
+<!-- ============ SLIDE 5 ============ -->
+<div class="slide">
+<h2>5. Código &mdash; SASS (Arquitectura 7-1)</h2>
+
+<div class="instruction">📌 Abrir carpeta <code>scss/</code> en VS Code. Capturar el árbol, <code>_variables.scss</code> y <code>_booking.scss</code>.</div>
+
+<h3>Estructura de archivos</h3>
+<pre>scss/
+├── main.scss
+├── abstracts/
+│   ├── _variables.scss    // Colores, fuentes, breakpoints
+│   ├── _mixins.scss       // respond-to(), transition()
+│   └── _placeholders.scss // %section-padding
+├── base/
+│   ├── _reset.scss
+│   └── _typography.scss
+├── components/
+│   ├── _nav.scss
+│   ├── _card.scss
+│   └── _button.scss
+├── layout/
+│   ├── _header.scss
+│   ├── _footer.scss
+│   └── _grid.scss
+└── pages/
+    ├── _home.scss
+    ├── _services.scss
+    ├── _about.scss
+    ├── _contact.scss
+    └── _booking.scss       // NUEVO: estilos del simulador</pre>
+
+<h3>Variables (abstracts/_variables.scss)</h3>
+<pre>$color-primary:     #e8b4b8;
+$color-primary-dark: #d4919b;
+$color-secondary:   #f5e6e8;
+$font-primary:      'Poppins', sans-serif;
+$font-secondary:    'Playfair Display', serif;
+$bp-mobile:         576px;
+$bp-tablet:         768px;
+$spacing-xl:        3rem;
+$shadow-md:         0 4px 8px rgba(0,0,0,0.15);</pre>
+
+<h3>Mixins (abstracts/_mixins.scss)</h3>
+<pre>@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: $bp-tablet) { @content; }
+  } @else if $breakpoint == mobile {
+    @media (max-width: $bp-mobile) { @content; }
+  }
+}
+
+@mixin transition($props, $duration, $ease) {
+  transition-property: $props;
+  transition-duration: $duration;
+  transition-timing-function: $ease;
+}</pre>
+
+<h3>Estilos del simulador (pages/_booking.scss)</h3>
+<pre>.booking-step {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .step-number {
+      width: 36px; height: 36px;
+      background: $color-primary;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+  }
+}</pre>
+</div>
+
+<!-- ============ SLIDE 6 ============ -->
+<div class="slide">
+<h2>6. Repositorio en GitHub</h2>
+
+<div class="instruction">📌 Ir a <code>github.com/valeriaecheverry21/CatLin-Studio</code>. Capturar página principal e historial de commits.</div>
+
+<div class="url">https://github.com/valeriaecheverry21/CatLin-Studio.git</div>
+
+<h3>Comandos Git utilizados</h3>
+<pre>git init
+git add .
+git commit -m "mensaje"
+git remote add origin https://github.com/valeriaecheverry21/CatLin-Studio.git
+git branch -M main
+git push -u origin main</pre>
+
+<h3>Historial de commits (13 incrementales)</h3>
+<table>
+  <tr><th>#</th><th>Hash</th><th>Mensaje</th></tr>
+  <tr><td>1</td><td>ce38f50</td><td>Add .gitignore to exclude node_modules</td></tr>
+  <tr><td>2</td><td>7536ccc</td><td>Mejora responsive: menú hamburguesa y navegación mobile</td></tr>
+  <tr><td>3</td><td>4243276</td><td>Mejora responsive: cards de servicios adaptadas a mobile</td></tr>
+  <tr><td>4</td><td>b618a62</td><td>Mejora responsive: footer centrado para dispositivos móviles</td></tr>
+  <tr><td>5</td><td>1db8505</td><td>Mejora responsive: hero section adaptada a mobile</td></tr>
+  <tr><td>6</td><td>34717ee</td><td>Mejora responsive: formulario de contacto e info adaptados a mobile</td></tr>
+  <tr><td>7</td><td>e21a178</td><td>Mejora responsive: página de servicios adaptada a mobile</td></tr>
+  <tr><td>8</td><td>6d7081d</td><td>Mejora responsive: página nosotros adaptada a mobile</td></tr>
+  <tr><td>9</td><td>c3e8c62</td><td>Estilos compilados: CSS generado desde SASS</td></tr>
+  <tr><td>10</td><td>aa7dee8</td><td>Estructura SASS completa: variables, mixins, componentes, layout y páginas</td></tr>
+  <tr><td>11</td><td>24c6c61</td><td>Documentos de entrega: plantilla HTML para PDF y versión para Docs</td></tr>
+  <tr><td>12</td><td>9dd1fd4</td><td>Documento entrega: reemplazar placeholders con código real e instrucciones</td></tr>
+  <tr class="commit-highlight"><td>13</td><td>624220d</td><td>Simulador interactivo de reservas: JSON + Fetch, SweetAlert2, DOM events</td></tr>
+</table>
+<p style="margin-top:0.4em;">Cada commit representa un incremento funcional que documenta el desarrollo paso a paso.</p>
+</div>
+
+<!-- ============ SLIDE 7 ============ -->
+<div class="slide">
+<h2>7. Demo &mdash; Sitio Publicado</h2>
+
+<div class="instruction">📌 Abrir el sitio en Vercel y capturar: home desktop, servicios con filtros, reserva con servicios agregados, modal de confirmación, versión mobile.</div>
+
+<div class="url">https://cat-lin-studio-58p5uca2f-valeriaecheverry21s-projects.vercel.app/</div>
+
+<h3>Capturas sugeridas</h3>
+<table>
+  <tr><th>#</th><th>Pantalla</th><th>Qué mostrar</th></tr>
+  <tr><td>1</td><td>Home (Desktop 1920px)</td><td>Hero + servicios + testimonios desde JSON</td></tr>
+  <tr><td>2</td><td>Servicios (Desktop)</td><td>Filtro "Manicura" activo, botones "Agregar"</td></tr>
+  <tr><td>3</td><td>Reserva (Desktop)</td><td>2 servicios agregados, sidebar con total</td></tr>
+  <tr><td>4</td><td>Modal SweetAlert2</td><td>Confirmación con n° de reserva y detalle</td></tr>
+  <tr><td>5</td><td>Mobile (375px)</td><td>Menú hamburguesa + formulario responsive</td></tr>
+  <tr><td>6</td><td>Tablet (768px)</td><td>Servicios en 2 columnas con filtros</td></tr>
+</table>
+
+<h3>Pasos del despliegue (Vercel)</h3>
+<ol>
+  <li>Ir a <strong>vercel.com</strong> y hacer login con GitHub</li>
+  <li>"Add New Project" &rarr; Importar repositorio <code>CatLin-Studio</code></li>
+  <li>Configurar: Framework = <em>Other</em>, Build = <code>npm run build-css</code>, Output = <code>.</code></li>
+  <li>"Deploy" &rarr; Obtener URL automática</li>
+  <li>Cada push a GitHub redeploya automáticamente</li>
+</ol>
+</div>
+
+<!-- ============ SLIDE 8 ============ -->
+<div class="slide">
+<h2>8. Reflexión Final</h2>
+
+<p>El desarrollo de <strong>CatLin Studio</strong> como aplicación web interactiva permitió integrar y aplicar todos los conceptos aprendidos durante el curso de JavaScript y desarrollo frontend. Cada concepto teórico se tradujo en una implementación concreta dentro del proyecto.</p>
+
+<h3>Variables y tipos de datos</h3>
+<p>Se utilizó <code>const</code> para referencias del DOM, configuraciones y funciones. <code>let</code> para el estado mutable de la reserva. Se trabajó con objetos, arrays de objetos y tipos primitivos de forma consistente.</p>
+
+<h3>Funciones y ámbito</h3>
+<p>Funciones con nombre descriptivo encapsulan lógica específica: <code>fetchJSON()</code>, <code>buildServiceCard()</code>, <code>renderServices()</code>, <code>updateBookingSummary()</code>. Los closures aparecen naturalmente en callbacks de eventos y promesas.</p>
+
+<h3>Manipulación del DOM</h3>
+<p>Creación dinámica de elementos con <code>createElement</code> e <code>innerHTML</code>. Modificación de clases con <code>classList</code>. Scroll suave con <code>scrollIntoView</code>. <strong>Delegación de eventos</strong> en contenedores padres para manejar clics en botones agregados dinámicamente.</p>
+
+<h3>Asincronismo (Fetch + Promesas)</h3>
+<p>Los datos de servicios y testimonios se cargan desde archivos <code>.json</code> mediante <code>fetch()</code> con promesas. El manejo de errores con <code>.catch()</code> muestra fallbacks visuales sin romper la experiencia.</p>
+
+<h3>Métodos funcionales de arrays</h3>
+<p><code>filter()</code> para filtrar por categoría, <code>find()</code> para buscar por ID, <code>map()</code> para transformar datos en la interfaz, <code>reduce()</code> para calcular totales. Reemplazan bucles tradicionales con código declarativo.</p>
+
+<h3>Librerías externas</h3>
+<p><strong>SweetAlert2</strong> reemplazó alert/confirm/prompt con modales visuales consistentes con la paleta de colores del estudio. <strong>AOS</strong> aporta animaciones de scroll. <strong>Bootstrap 5</strong> proporciona el sistema de grillas y componentes base.</p>
+
+<h3>Buenas prácticas</h3>
+<ul>
+  <li>Cero código comentado o en desuso</li>
+  <li>Nombres descriptivos de funciones y variables</li>
+  <li>Sin console.log, alert, confirm ni prompt</li>
+  <li>Manejo de errores con fallbacks visuales</li>
+  <li>Código estructurado en secciones lógicas dentro de un único archivo JS</li>
+</ul>
+
+<h3>Dificultades encontradas</h3>
+<p>Migrar de un sitio estático a interactivo sin romper funcionalidad existente. Ajustar rutas relativas en SASS con <code>@use</code>. Delegación de eventos en elementos generados dinámicamente, resuelto con <code>e.target.closest()</code>.</p>
+
+<h3>Conclusión</h3>
+<p>CatLin Studio demuestra la aplicación práctica de todos los conceptos del curso: desde sintaxis básica hasta asincronismo, manipulación del DOM e integración de librerías. El resultado es una aplicación web funcional, responsive, con código limpio y mantenible.</p>
+
+<div class="footer-note">CatLin Studio &mdash; Evaluación Final JavaScript &middot; Desarrollo Frontend &middot; 2026</div>
+</div>
+
+</body>
+</html>
