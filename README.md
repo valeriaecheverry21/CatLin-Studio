@@ -2,13 +2,25 @@
 
 Sitio web institucional desarrollado con HTML5, SASS y Bootstrap 5.
 
-## Servicios
+## 📋 Descripción del Proyecto
+
+**CatLin Studio** es un sitio web profesional para un estudio de belleza y bienestar que ofrece servicios de alta calidad en manicura, diseño de cejas, extensiones de pestañas y masajes relajantes. El proyecto combina un diseño moderno y atractivo con una experiencia de usuario intuitiva y responsiva, permitiendo a los clientes conocer los servicios, consultar la galería de trabajos y ponerse en contacto con el estudio.
+
+### Funcionalidad Principal
+- **Página de inicio**: Presentación del estudio con testimonios y promociones destacadas
+- **Catálogo de servicios**: Descripción detallada de cada servicio ofrecido
+- **Sección "Nosotros"**: Historia y filosofía del estudio
+- **Galería visual**: Portfolio de trabajos realizados
+- **Formulario de contacto**: Comunicación directa con el equipo
+- **Navegación responsive**: Adaptada para dispositivos móviles y desktop
+
+## 🎨 Servicios
 - Manicura profesional
 - Diseño de cejas
 - Extensiones de pestañas
 - Masajes relajantes
 
-## Estructura del Proyecto
+## 📁 Estructura del Proyecto
 ```
 CatLin-Studio/
 ├── index.html
@@ -30,29 +42,47 @@ CatLin-Studio/
 └── package.json
 ```
 
-## Tecnologías Utilizadas
-- HTML5 semántico
-- SASS (con variables, mixins, nesting, extend)
-- Bootstrap 5.3 (personalizado)
-- AOS (Animate On Scroll)
-- Font Awesome 6
-- Google Fonts (Poppins, Playfair Display)
+## 🛠️ Tecnologías Utilizadas
+- **HTML5** (70.3%) - Semántico y optimizado para SEO
+- **SASS/SCSS** (17.3%) - Preprocesador CSS con arquitectura modular, variables, mixins y nesting
+- **JavaScript** (12.4%) - Interactividad y funcionalidades dinámicas
+- **Bootstrap 5.3** - Framework CSS personalizado con paleta de colores propia
+- **AOS (Animate On Scroll)** - Animaciones elegantes al hacer scroll
+- **Font Awesome 6** - Iconografía profesional
+- **Google Fonts** - Tipografía personalizada (Poppins, Playfair Display)
 
-## Instalación y Desarrollo
+## 📦 Instalación y Desarrollo
 
 1. Clonar el repositorio
-2. Instalar dependencias: `npm install`
-3. Compilar SASS: `npm run build-css`
-4. Modo desarrollo (watch): `npm run sass`
+```bash
+git clone https://github.com/valeriaecheverry21/CatLin-Studio.git
+cd CatLin-Studio
+```
 
-## Características
+2. Instalar dependencias: 
+```bash
+npm install
+```
+
+3. Compilar SASS: 
+```bash
+npm run build-css
+```
+
+4. Modo desarrollo (watch): 
+```bash
+npm run sass
+```
+
+## ✨ Características Destacadas
 - ✅ HTML semántico y SEO optimizado
-- ✅ SASS con arquitectura modular
+- ✅ SASS con arquitectura modular y mantenible
 - ✅ Diseño responsive (mobile-first)
-- ✅ Animaciones y transiciones
-- ✅ Bootstrap personalizado con paleta de colores propia
-- ✅ Accesibilidad (aria-labels, navegación)
+- ✅ Animaciones y transiciones fluidas
+- ✅ Bootstrap personalizado con identidad visual única
+- ✅ Accesibilidad (aria-labels, navegación clara)
 - ✅ Optimización de rendimiento
+- ✅ Navegación intuitiva y experiencia de usuario mejorada
 
-## Autor
+## 👤 Autor
 CatLin Studio - 2026
